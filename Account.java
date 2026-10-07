@@ -1,46 +1,53 @@
-public class Account {
+public class Employee {
 
-    private int accountNumber;
-    private String accountHolderName;
-    private double balance;
+    private String name;
+    private int id;
+    private double salary;
 
-    // Default Constructor
-    public Account() {
-        accountNumber = 0;
-        accountHolderName = "";
-        balance = 0.0;
+    // Constructor 1 - Default Constructor
+    Employee() {
+        name = "";
+        id = 0;
+        salary = 0.0;
     }
 
-    // Parameterized Constructor
-    public Account(int accountNumber, String accountHolderName, double balance) {
-        this.accountNumber = accountNumber;
-        this.accountHolderName = accountHolderName;
-        this.balance = balance;
+    // Constructor 2 - Parameterized Constructor
+    Employee(String name, int id, double salary) {
+        this.name = name;
+        this.id = id;
+        this.salary = salary;
     }
 
-    // Setter Methods
-    public void setAccountNumber(int accountNumber) {
-        this.accountNumber = accountNumber;
+    // Set Methods
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public void setAccountHolderName(String accountHolderName) {
-        this.accountHolderName = accountHolderName;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public void setBalance(double balance) {
-        this.balance = balance;
+    public void setSalary(double salary) {
+        this.salary = salary;
     }
 
-    // Getter Methods
-    public int getAccountNumber() {
-        return accountNumber;
+    // Get Methods
+    public String getName() {
+        return name;
     }
 
-    public String getAccountHolderName() {
-        return accountHolderName;
+    public int getId() {
+        return id;
     }
 
-    public double getBalance() {
-        return balance;
+    public double getSalary() {
+        return salary;
+    }
+
+    // Display Method
+    public void display() {
+        System.out.println("Employee Name: " + getName());
+        System.out.println("Employee ID: " + getId());
+        System.out.println("Employee Salary: " + getSalary());
     }
 }
