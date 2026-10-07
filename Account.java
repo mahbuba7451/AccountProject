@@ -1,53 +1,66 @@
-public class Employee {
+public class Account {
 
-    private String name;
-    private int id;
-    private double salary;
+    private int accountNumber;
+    private String accountHolderName;
+    private double balance;
 
-    // Constructor 1 - Default Constructor
-    Employee() {
-        name = "";
-        id = 0;
-        salary = 0.0;
+    // Default Constructor
+    public Account() {
+        accountNumber = 0;
+        accountHolderName = "";
+        balance = 0.0;
     }
 
-    // Constructor 2 - Parameterized Constructor
-    Employee(String name, int id, double salary) {
-        this.name = name;
-        this.id = id;
-        this.salary = salary;
+    // Parameterized Constructor
+    public Account(int accountNumber, String accountHolderName, double balance) {
+        this.accountNumber = accountNumber;
+        this.accountHolderName = accountHolderName;
+        this.balance = balance;
     }
 
-    // Set Methods
-    public void setName(String name) {
-        this.name = name;
+    // Setter Methods
+    public void setAccountNumber(int accountNumber) {
+        this.accountNumber = accountNumber;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setAccountHolderName(String accountHolderName) {
+        this.accountHolderName = accountHolderName;
     }
 
-    public void setSalary(double salary) {
-        this.salary = salary;
+    public void setBalance(double balance) {
+        this.balance = balance;
     }
 
-    // Get Methods
-    public String getName() {
-        return name;
+    // Getter Methods
+    public int getAccountNumber() {
+        return accountNumber;
     }
 
-    public int getId() {
-        return id;
+    public String getAccountHolderName() {
+        return accountHolderName;
     }
 
-    public double getSalary() {
-        return salary;
+    public double getBalance() {
+        return balance;
     }
 
-    // Display Method
-    public void display() {
-        System.out.println("Employee Name: " + getName());
-        System.out.println("Employee ID: " + getId());
-        System.out.println("Employee Salary: " + getSalary());
+    // Deposit Method
+    public void deposit(double amount) {
+        if (amount > 0) {
+            balance = balance + amount;
+            System.out.println("Deposit Successful.");
+        } else {
+            System.out.println("Invalid Deposit Amount.");
+        }
+    }
+
+    // Withdraw Method
+    public void withdraw(double amount) {
+        if (amount > 0 && amount <= balance) {
+            balance = balance - amount;
+            System.out.println("Withdrawal Successful.");
+        } else {
+            System.out.println("Insufficient Balance or Invalid Amount.");
+        }
     }
 }
